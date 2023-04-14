@@ -4,6 +4,6 @@ session_start();
 
 session_unset();
 
-header('location:display.php');
+header('location:login.php');
 
 ?>

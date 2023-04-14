@@ -99,7 +99,8 @@ else{
 ?>
 
 </table></center>
-<a href="logout.php" ><input type="submit" value="Logout" style="background:blue; color:white;height:35px;width:100px;margin-top:20px;font-size:18px;border-radius:5px;cursor:pointer;"></a>
+<a href="logout.php" ><input type="submit" value="Logout" style="background:blue; color:white;height:35px;width:100px;margin-top:20px;font-size:18px;border-radius:5px;cursor:pointer;">
+
 <script>
     function checkdelete(){
         return confirm('Are you sure to delete this record?');

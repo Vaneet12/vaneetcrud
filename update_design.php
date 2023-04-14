@@ -1,6 +1,7 @@
 <?php
 include("connection.php");
 session_start();
+$userprofile= $_SESSION['user_name'];
 
 $id= $_GET['id'];
 if($userprofile==true){
@@ -26,17 +27,18 @@ $language1=explode(",",$language);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHP CRUD operation</title>
     <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="validate.js"></script>
 </head>
 
 <body>
     <div class="container">
-        <form action="" method="post">
+    <form action="" method="post" name="myForm" onsubmit="return validateForm()">
         <div class="title">
 Update details        </div>
         <div class="form">
             <div class="input_field">
                 <label for="">First Name</label>               
-                 <input type="text" value = " <?php echo $result['fname']; ?> " name = "first" id="" class="input" required>
+                 <input type="text" value = " <?php echo $result['fname']; ?> " name = "first" id="" class="input" >
 
                  </div>
 
@@ -47,18 +49,18 @@ Update details        </div>
 
             <div class="input_field">
                 <label for="">Password</label>
-                <input type="password"  value = " <?php echo $result['password']; ?> name="password" id="" class="input" required>
+                <input type="password"  value = " <?php echo $result['password']; ?> name="password" id="" class="input" >
             </div>
 
             <div class="input_field">
                 <label for="">Confirm Password</label>
-                <input type="password"  value = " <?php echo $result['cpassword']; ?> name="conf" id="" class="input" required>
+                <input type="password"  value = " <?php echo $result['cpassword']; ?> name="conf" id="" class="input" >
             </div>
 
             <div class="input_field">
                 <label for="">Gender</label>
                 <div class="selectbox">
-                    <select name="gender" required>
+                    <select name="gender">
                         <option value="not selected">Select</option>
                         <option value="male" 
                         <?php
@@ -81,7 +83,7 @@ Update details        </div>
             </div>
             <div class="input_field">
                 <label for="">E-Mail</label>
-                <input type="text" value = " <?php echo $result['email']; ?>" name="mail" id="" class="input" required>
+                <input type="text" value = " <?php echo $result['email']; ?>" name="mail" id="" class="input" >
             </div>
             <div class="input_field">
                 <label for="">Phone</label>
@@ -98,7 +100,7 @@ Update details        </div>
 
                 ?>
                 
-                required
+                
                 ><label style="margin-left:5px;">General</label>
                 <input type="radio" name="r1" value="OBC" id=""
                 <?php
@@ -107,7 +109,7 @@ Update details        </div>
                 }
 
                 ?>
-                required
+                
                 
                 > <label style="margin-left:5px;">OBC</label>
                 <input type="radio" name="r1" value="SC" id=""
@@ -117,7 +119,7 @@ Update details        </div>
                 }
 
                 ?>
-                required
+                
                 > 
                 
                 <label style="margin-left:5px;">SC</label>
@@ -130,7 +132,7 @@ Update details        </div>
 
                 ?>
                 
-                required
+                
                 > <label style="margin-left:5px;">ST</label>
 
             </div>

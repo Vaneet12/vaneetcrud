@@ -9,15 +9,16 @@ session_start()
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="login-style.css">
+    <script src="validate1.js"></script>
     <title>Login</title>
 </head>
 <body>
     <div class="center">
         <h1>Login</h1>
-        <form action="#" method="post" autocomplete="off">
+        <form action="#" method="post" name="myForm" onsubmit="return validateForm()" autocomplete="off">
         <div class="form">
-            <input type="text" name="username" id="" class="textfiled" placeholder="Username" required>
-            <input type="password" name="password" id="" class="textfiled" placeholder="Password" required>
+            <input type="text" name="username" id="" class="textfiled" placeholder="Username" >
+            <input type="password" name="password" id="" class="textfiled" placeholder="Password" >
 <div class="forgetpass"><a href="#" class="link" onclick="message()">Forget Password ?</a></div>
 <input type="submit" name="submit" value="Login" class="btn">
 <div class="signup">New member? <a href="http://localhost/form.php" class="link">Signup</a></div>
