@@ -6,7 +6,10 @@ echo "Welcome " . $_SESSION['user_name'];
 <html>
     <head>
         <title>Display
+
 </title>
+<script src="ajax.js"></script>
+
 <style>
     body{
         background:#d071f9;
@@ -53,18 +56,19 @@ echo $total;
 if($total !=0){
     ?>
 <h2 align="center"><mark>Displaying All Records</mark></h2>
-<center><table border="1" cellspacing="7" width="100%">
+<center><table border="1" cellspacing="7" width="100%" class="table" id="table-container">
     <tr>
     <th width="5%">ID</th>
+    <th width="10%">Image</th>
     <th width="8%">First Name</th>
     <th width="8%">Last Name</th>
     <th width="10%">Gender</th>
-    <th width="20%">Email</th>
+    <th width="10%">Email</th>
     <th width="7%">Phone</th>
     <th width="3%">Caste</th>
     <th width="6%">Language</th>
 
-    <th width="18%%">Address</th>
+    <th width="18%">Address</th>
     <th width="15%">Operations</th>
 
 
@@ -76,6 +80,8 @@ if($total !=0){
   {
     echo "<tr>
     <td>".$result['id']."</td>
+    <td><img src='".$result['image']."' height='100px' width:'100px'></td>
+
     <td>".$result['fname']."</td>
     <td>".$result['lname']."</td>
     <td>".$result['gender']."</td>
@@ -86,7 +92,10 @@ if($total !=0){
 
     <td>".$result['address']."</td>
     <td><a href='update_design.php?id=$result[id]'><input type='submit' value='Update' class='update'></a>
-    <a href='delete.php?id=$result[id]'><input type='submit' value='Delete' class='delete' onclick='return checkdelete()'></a></td>
+    <a href='delete.php?id=$result[id]'><input type='submit' value='Delete' class='delete' onclick='return checkdelete()'>
+    </a>
+    <td><a href='view.php?id=$result[id]'><input type='submit' value='View' class='update'></a>
+    </td>
 
 
 </tr>";

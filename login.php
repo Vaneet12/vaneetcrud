@@ -21,7 +21,7 @@ session_start()
             <input type="password" name="password" id="" class="textfiled" placeholder="Password" >
 <div class="forgetpass"><a href="#" class="link" onclick="message()">Forget Password ?</a></div>
 <input type="submit" name="submit" value="Login" class="btn">
-<div class="signup">New member? <a href="http://localhost/form.php" class="link">Signup</a></div>
+<div class="signup">New member? <a href="https://psd2htmlx.com/R/demo/php/form.php" class="link">Signup</a></div>
         </div>
     </div>
 </form>
