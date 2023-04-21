@@ -98,7 +98,7 @@ font-size:14px;
     font-size:14px;
     color:#757575;
 }
-.container .form .input_field .check{
+/* .container .form .input_field .check{
     width:15px;
     height:15px;
     position:relative;
@@ -110,7 +110,7 @@ cursor:pointer;
     position:absolute;
     top:0;
     left:0;
-    opacity:0;
+   opacity:0; 
 }
 .container .form .input_field .check .checkmark{
 width:15px;
@@ -129,7 +129,7 @@ position:relative;
     width:2px;
     border:2px solid;
     border-color:transparent transparent black black;
-    transform:rotate(45deg);
+    transform:rotate(-45deg);
 }
 .container .form .input_field .check input[type="checkbox"]:checked ~ .checkmark {
     background:#d071f9;
@@ -138,7 +138,7 @@ position:relative;
 .container .form .input_field .check input[type="checkbox"]:checked ~ .checkmark:before{
 
 display:block;
-}
+} */
 
 .container .form .input_field .btn{
     width:100%;

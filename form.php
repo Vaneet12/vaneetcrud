@@ -98,7 +98,7 @@ error_reporting(E_ALL);
             <div class="input_field">
                 <label class="check" for="">
                     <input type="checkbox" name="" id="">
-                    <span class="checkmark"></span>
+                    <span class=""></span>
                 </label>
                 <p>Agree to terms and conditions</p>
 
