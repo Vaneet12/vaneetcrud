@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Apr 13, 2023 at 03:18 PM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.0.25
+-- Host: 127.0.0.1
+-- Generation Time: Apr 02, 2021 at 08:41 AM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.2.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,71 +18,86 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `responsiveform3`
+-- Database: `crud`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `form`
+-- Table structure for table `student`
 --
 
-CREATE TABLE `form` (
-  `id` int(11) NOT NULL,
-  `fname` varchar(20) NOT NULL,
-  `lname` varchar(20) NOT NULL,
-  `password` varchar(30) NOT NULL,
-  `cpassword` varchar(30) NOT NULL,
-  `gender` varchar(6) NOT NULL,
-  `email` varchar(40) NOT NULL,
-  `phone` varchar(10) NOT NULL,
-  `caste` varchar(10) NOT NULL,
-  `language` varchar(40) NOT NULL,
-  `address` varchar(80) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `student` (
+  `sid` int(10) NOT NULL,
+  `sname` varchar(30) NOT NULL,
+  `saddress` varchar(100) NOT NULL,
+  `sclass` int(10) NOT NULL,
+  `sphone` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `form`
+-- Dumping data for table `student`
 --
 
-INSERT INTO `form` (`id`, `fname`, `lname`, `password`, `cpassword`, `gender`, `email`, `phone`, `caste`, `language`, `address`) VALUES
-(4, 'vaneet', 'kumar', '1234', '1234', 'male', 'vaneetkumar@gmail.com', '23453', '', '', '\r\nrth'),
-(6, 'aman', 'thakur', '1234', '1234', 'male', 'am@gmail.com', '243', '', '', '\r\nres'),
-(7, 'aman', 'thakur', '1234', '1234', 'male', 'am@gmail.com', '243', '', '', '\r\nres'),
-(8, 'aman', 'thakur', '1234', '1234', 'male', 'am@gmail.com', '243', '', '', '\r\nres'),
-(9, 'aman', 'thakur', '1234', '1234', 'male', 'am@gmail.com', '243', '', '', '\r\nres'),
-(10, 'aman', 'thakur', '1234', '1234', 'male', 'am@gmail.com', '243', '', '', '\r\nres'),
-(11, 'aman', 'thakur', '1234', '1234', 'male', 'am@gmail.com', '243', '', '', '\r\nres'),
-(12, 'aman', 'thakur', '1234', '1234', 'male', 'am@gmail.com', '243', '', '', '\r\nres'),
-(13, 'aman', 'thakur', '1234', '1234', 'male', 'am@gmail.com', '243', '', '', '\r\nres'),
-(14, 'aman', 'thakur', '1234', '1234', 'male', 'am@gmail.com', '243', '', '', '\r\nres'),
-(15, 'aman', 'thakur', '1234', '1234', 'male', 'am@gmail.com', '243', '', '', '\r\nres'),
-(16, 'vaneet', 'kumar', '1234', '1234', 'male', 'sdg', '46', 'ST', '', 'rfh\r\n'),
-(17, 'vaneet', 'kumar', '1234', '1234', 'male', 'sdg', '46', 'SC', '', 'rfh\r\n'),
-(18, 'vaneet', 'kumar', '1234', '1234', 'male', 'sdg', '46', 'SC', '', 'rfh\r\n'),
-(19, ' tgj ', ' fg', '', '', 'female', ' dfeg', ' 5654', 'General', '', '               dfcn\r\n'),
-(20, ' bunty ', ' s', '', '', 'male', ' dsfgvb', ' 234', 'General', 'Hindi,English', '               \r\nerh'),
-(21, 'bunty', 's', '1234', '1234', 'male', 'dsfgvb', '234', 'General', 'Hindi', '\r\nerh');
+INSERT INTO `student` (`sid`, `sname`, `saddress`, `sclass`, `sphone`) VALUES
+(1, 'Sila Khatri', '#34 sdfdsfsdf', 1, '9898989874'),
+(2, 'Anita Chettri', '#654 KD Building Mumbai', 1, '9874587456'),
+(11, 'Jasmine Singh', '#34 JC Road, abc', 1, '9845546546'),
+(12, 'Sangam B', '#76 SK Building,Pkr', 3, '9827135435'),
+(13, 'Ritika Singh', '#45 RS Buiding', 3, '34435435');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `studentclass`
+--
+
+CREATE TABLE `studentclass` (
+  `cid` int(11) NOT NULL,
+  `cname` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `studentclass`
+--
+
+INSERT INTO `studentclass` (`cid`, `cname`) VALUES
+(1, 'BCA'),
+(2, 'Btech'),
+(3, 'Bsc'),
+(4, 'Bcom');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `form`
+-- Indexes for table `student`
 --
-ALTER TABLE `form`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `student`
+  ADD PRIMARY KEY (`sid`);
+
+--
+-- Indexes for table `studentclass`
+--
+ALTER TABLE `studentclass`
+  ADD PRIMARY KEY (`cid`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `form`
+-- AUTO_INCREMENT for table `student`
 --
-ALTER TABLE `form`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+ALTER TABLE `student`
+  MODIFY `sid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT for table `studentclass`
+--
+ALTER TABLE `studentclass`
+  MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
